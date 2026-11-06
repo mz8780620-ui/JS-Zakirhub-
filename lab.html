@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Python লাইভ ল্যাব — JS Zakirhub</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #0f172a; color: #e2e8f0; line-height: 1.7; }
+  .topbar { background: #0b1220; border-bottom: 1px solid #1e293b; padding: 8px 20px; font-size: 0.85rem; }
+  .topbar-inner { max-width: 900px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px; }
+  .topbar .person { color: #94a3b8; }
+  .topbar .company { color: #38bdf8; font-weight: bold; }
+  nav { background: #1e293b; border-bottom: 1px solid #334155; padding: 14px 20px; position: sticky; top: 0; z-index: 10; }
+  nav .nav-inner { max-width: 900px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px; }
+  nav .logo { font-size: 1.3rem; font-weight: bold; color: #38bdf8; text-decoration: none; }
+  nav ul { list-style: none; display: flex; flex-wrap: wrap; gap: 16px; }
+  nav ul a { color: #cbd5e1; text-decoration: none; font-size: 0.95rem; }
+  nav ul a:hover { color: #38bdf8; }
+  
+  .container { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
+  .page-title { font-size: 2rem; color: #38bdf8; margin-bottom: 20px; border-bottom: 2px solid #1e293b; padding-bottom: 10px; }
+  
+  .lab-container { background: #1e293b; border: 1px solid #334155; border-radius: 10px; padding: 20px; margin-bottom: 24px; }
+  
+  textarea { width: 100%; height: 200px; background: #0b1220; color: #a5b4fc; font-family: Consolas, monospace; font-size: 1rem; padding: 15px; border: 1px solid #334155; border-radius: 8px; resize: vertical; margin-bottom: 15px; }
+  
+  .btn-group { display: flex; gap: 10px; }
+  .lab-btn { background: #38bdf8; color: #0f172a; border: none; padding: 12px 20px; border-radius: 8px; font-weight: bold; cursor: pointer; font-size: 1rem; flex: 1; }
+  .lab-btn:hover { background: #0ea5e9; }
+  .lab-btn:disabled { background: #64748b; cursor: not-allowed; }
+  .clear-btn { background: #ef4444; color: white; }
+  .clear-btn:hover { background: #dc2626; }
+  
+  .output-title { margin-top: 20px; color: #f1f5f9; font-size: 1.2rem; border-bottom: 1px solid #334155; padding-bottom: 5px; margin-bottom: 10px; }
+  .output-box { width: 100%; min-height: 100px; background: #0b1220; color: #4ade80; padding: 15px; border: 1px solid #334155; border-radius: 8px; font-family: Consolas, monospace; white-space: pre-wrap; }
+  .error-text { color: #f87171; }
+  
+  .back-btn { display: inline-block; margin-bottom: 20px; color: #38bdf8; text-decoration: none; font-weight: bold; }
+  footer { text-align: center; padding: 30px 20px; font-size: 0.85rem; color: #64748b; border-top: 1px solid #1e293b; margin-top: 40px; }
+  footer a { color: #38bdf8; text-decoration: none; }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <span class="person">Mohammad Zakir Hussain</span>
+    <span class="company">JS Zakirhub</span>
+  </div>
+</div>
+
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="index.html">JS Zakirhub</a>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="python.html">Python</a></li>
+      <li><a href="javascript.html">JavaScript</a></li>
+      <li><a href="java.html">Java</a></li>
+      <li><a href="lab.html" style="color:#38bdf8; font-weight:bold;">🐍 পাইথন ল্যাব</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container">
+  <a href="index.html" class="back-btn">← হোমে ফিরে যান</a>
+  
+  <h1 class="page-title">🐍 Python লাইভ ল্যাব</h1>
+  
+  <div class="lab-container">
+    <p style="margin-bottom: 15px; color: #cbd5e1;">এখানে আপনি Python কোড লিখে সরাসরি রান করতে পারবেন। নিচের বক্সে কোড লিখে <b>Run Code</b> বাটনে ক্লিক করুন।</p>
+    
+    <textarea id="codeEditor">
+print("Hello, Zakirhub!")
+name = input("আপনার নাম কী? ")
+print("হ্যালো, " + name)</textarea>
+    
+    <div class="btn-group">
+      <button class="lab-btn" id="runBtn" onclick="runPythonCode()">▶ Run Code</button>
+      <button class="lab-btn clear-btn" onclick="clearCode()">🗑 Clear</button>
+    </div>
+    
+    <h2 class="output-title">ফলাফল (Output):</h2>
+    <div class="output-box" id="outputBox">এখানে আপনার কোডের ফলাফল দেখা যাবে...</div>
+  </div>
+</div>
+
+<footer>
+  © 2026 JS Zakirhub — শেখার জন্য সবার জন্য উন্মুক্ত<br>
+  <a href="https://www.facebook.com/share/1FJ8CKm56o/" target="_blank" rel="noopener">আমাদের ফেসবুক পেজ</a>
+</footer>
+
+<script>
+  async function runPythonCode() {
+    const code = document.getElementById("codeEditor").value;
+    const outputBox = document.getElementById("outputBox");
+    const runBtn = document.getElementById("runBtn");
+    
+    outputBox.innerHTML = "⏳ কোড রান হচ্ছে... অপেক্ষা করুন...";
+    outputBox.className = "output-box";
+    runBtn.disabled = true;
+
+    try {
+      // ফ্রি Piston API ব্যবহার করে পাইথন কোড রান করা হচ্ছে
+      const response = await fetch("https://emkc.org/api/v2/piston/execute", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          language: "python",
+          version: "3.10.0",
+          files: [{ content: code }]
+        })
+      });
+      
+      const data = await response.json();
+      
+      if (data.run && data.run.output) {
+        outputBox.textContent = data.run.output;
+      } else {
+        outputBox.textContent = "কোনো আউটপুট পাওয়া যায়নি।";
+      }
+      
+      if (data.run && data.run.stderr) {
+        outputBox.textContent += "\n\n⚠️ Error:\n" + data.run.stderr;
+        outputBox.className = "output-box error-text";
+      }
+
+    } catch (error) {
+      outputBox.textContent = "❌ সংযোগে সমস্যা হয়েছে। ইন্টারনেট চেক করুন।\n" + error.message;
+      outputBox.className = "output-box error-text";
+    } finally {
+      runBtn.disabled = false;
+    }
+  }
+  
+  function clearCode() {
+    document.getElementById("codeEditor").value = "";
+    document.getElementById("outputBox").textContent = "এখানে আপনার কোডের ফলাফল দেখা যাবে...";
+    document.getElementById("outputBox").className = "output-box";
+  }
+</script>
+
+</body>
+</html>
