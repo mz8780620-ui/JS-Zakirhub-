@@ -4,154 +4,38 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>JS Zakirhub — Learn Coding</title>
-<meta name="description" content="JS Zakirhub — Learn Python, JavaScript, Java coding for free. কোডিং শিখুন সহজ ভাষায়।">
+<meta name="description" content="JS Zakirhub — Learn Python, JavaScript, Java coding for free. লাইভ ল্যাবসহ কোডিং শিখুন।">
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    background: #0f172a;
-    color: #e2e8f0;
-    line-height: 1.6;
-  }
-
-  /* টপ বার — নাম ও কম্পানি */
-  .topbar {
-    background: #0b1220;
-    border-bottom: 1px solid #1e293b;
-    padding: 8px 20px;
-    font-size: 0.85rem;
-  }
-  .topbar-inner {
-    max-width: 900px;
-    margin: 0 auto;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 6px;
-  }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #0f172a; color: #e2e8f0; line-height: 1.6; }
+  .topbar { background: #0b1220; border-bottom: 1px solid #1e293b; padding: 8px 20px; font-size: 0.85rem; }
+  .topbar-inner { max-width: 900px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px; }
   .topbar .person { color: #94a3b8; }
-  .topbar .company {
-    color: #38bdf8;
-    font-weight: bold;
-    letter-spacing: 0.5px;
-  }
-
-  /* নেভিগেশন বার */
-  nav {
-    background: #1e293b;
-    border-bottom: 1px solid #334155;
-    padding: 14px 20px;
-    position: sticky;
-    top: 0;
-    z-index: 10;
-  }
-  nav .nav-inner {
-    max-width: 900px;
-    margin: 0 auto;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-    gap: 10px;
-  }
-  nav .logo {
-    font-size: 1.3rem;
-    font-weight: bold;
-    color: #38bdf8;
-    text-decoration: none;
-  }
-  nav ul {
-    list-style: none;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 16px;
-  }
-  nav ul a {
-    color: #cbd5e1;
-    text-decoration: none;
-    font-size: 0.95rem;
-  }
+  .topbar .company { color: #38bdf8; font-weight: bold; letter-spacing: 0.5px; }
+  nav { background: #1e293b; border-bottom: 1px solid #334155; padding: 14px 20px; position: sticky; top: 0; z-index: 10; }
+  nav .nav-inner { max-width: 900px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px; }
+  nav .logo { font-size: 1.3rem; font-weight: bold; color: #38bdf8; text-decoration: none; }
+  nav ul { list-style: none; display: flex; flex-wrap: wrap; gap: 16px; }
+  nav ul a { color: #cbd5e1; text-decoration: none; font-size: 0.95rem; }
   nav ul a:hover { color: #38bdf8; }
-
-  /* হিরো সেকশন */
-  .hero {
-    text-align: center;
-    padding: 60px 20px 40px;
-    background: linear-gradient(135deg, #1e293b, #0f172a);
-  }
-  .hero h1 {
-    font-size: 2.4rem;
-    color: #38bdf8;
-    letter-spacing: 1px;
-  }
-  .hero p {
-    margin-top: 14px;
-    font-size: 1.1rem;
-    color: #94a3b8;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  /* কার্ড সেকশন */
-  .container {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 40px 20px;
-  }
-  .section-title {
-    text-align: center;
-    font-size: 1.5rem;
-    color: #f1f5f9;
-    margin-bottom: 28px;
-  }
-  .cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 20px;
-  }
-  .card {
-    background: #1e293b;
-    border: 1px solid #334155;
-    border-radius: 14px;
-    padding: 28px 22px;
-    text-decoration: none;
-    color: inherit;
-    transition: transform 0.2s, border-color 0.2s;
-    display: block;
-  }
-  .card:hover {
-    transform: translateY(-4px);
-    border-color: #38bdf8;
-  }
+  .hero { text-align: center; padding: 60px 20px 40px; background: linear-gradient(135deg, #1e293b, #0f172a); }
+  .hero h1 { font-size: 2.4rem; color: #38bdf8; letter-spacing: 1px; }
+  .hero p { margin-top: 14px; font-size: 1.1rem; color: #94a3b8; max-width: 600px; margin-left: auto; margin-right: auto; }
+  .container { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
+  .section-title { text-align: center; font-size: 1.5rem; color: #f1f5f9; margin-bottom: 28px; }
+  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
+  .card { background: #1e293b; border: 1px solid #334155; border-radius: 14px; padding: 28px 22px; text-decoration: none; color: inherit; transition: transform 0.2s, border-color 0.2s; display: block; }
+  .card:hover { transform: translateY(-4px); border-color: #38bdf8; }
   .card .icon { font-size: 2.2rem; }
-  .card h2 {
-    margin: 12px 0 8px;
-    font-size: 1.3rem;
-    color: #f1f5f9;
-  }
-  .card p {
-    font-size: 0.95rem;
-    color: #94a3b8;
-  }
-
-  footer {
-    text-align: center;
-    padding: 30px 20px;
-    font-size: 0.85rem;
-    color: #64748b;
-    border-top: 1px solid #1e293b;
-  }
-  footer a {
-    color: #38bdf8;
-    text-decoration: none;
-  }
+  .card h2 { margin: 12px 0 8px; font-size: 1.3rem; color: #f1f5f9; }
+  .card p { font-size: 0.95rem; color: #94a3b8; }
+  footer { text-align: center; padding: 30px 20px; font-size: 0.85rem; color: #64748b; border-top: 1px solid #1e293b; }
+  footer a { color: #38bdf8; text-decoration: none; }
   footer a:hover { text-decoration: underline; }
 </style>
 </head>
 <body>
 
-<!-- টপ বার -->
 <div class="topbar">
   <div class="topbar-inner">
     <span class="person">Mohammad Zakir Hussain</span>
@@ -159,7 +43,6 @@
   </div>
 </div>
 
-<!-- নেভিগেশন বার -->
 <nav>
   <div class="nav-inner">
     <a class="logo" href="index.html">JS Zakirhub</a>
@@ -168,19 +51,18 @@
       <li><a href="python.html">Python</a></li>
       <li><a href="javascript.html">JavaScript</a></li>
       <li><a href="java.html">Java</a></li>
+      <li><a href="lab.html" style="color: #38bdf8; font-weight: bold;">🧪 ল্যাব</a></li>
     </ul>
   </div>
 </nav>
 
-<!-- হিরো সেকশন -->
 <section class="hero">
   <h1>JS Zakirhub</h1>
-  <p>কোডিং শিখুন সহজ ভাষায় — Learn Coding, Build Your Future। Python, JavaScript, Java — সব এক জায়গায়।</p>
+  <p>কোডিং শিখুন সহজ ভাষায় — Learn Coding, Build Your Future। Python, JavaScript, Java এবং লাইভ ল্যাব — সব এক জায়গায়।</p>
 </section>
 
-<!-- ভাষার কার্ড -->
 <div class="container">
-  <h2 class="section-title">কোডিং ভাষা বেছে নিন</h2>
+  <h2 class="section-title">আপনি কী শিখতে চান?</h2>
   <div class="cards">
 
     <a class="card" href="python.html">
@@ -199,6 +81,13 @@
       <div class="icon">☕</div>
       <h2>Java</h2>
       <p>অ্যাপ ও সিস্টেম ডেভেলপমেন্টের জন্য Java শিখুন।</p>
+    </a>
+
+    <!-- নতুন ল্যাব কার্ড -->
+    <a class="card" href="lab.html" style="border-color: #38bdf8;">
+      <div class="icon">🧪</div>
+      <h2>Python লাইভ ল্যাব</h2>
+      <p>নিজে কোড লিখে সাথে সাথেই ফলাফল দেখুন।</p>
     </a>
 
   </div>
